@@ -11,7 +11,22 @@ namespace Badetidssystemet
         DateTime _startTidspunkt;
         DateTime _slutTidspunkt;
 
-        public string Type { get { return _type;} private set { _type = value; } }
+        public string Type 
+        { 
+            get { return _type;}
+            private set
+            {
+                string errMsg = "Type skal indeholde mindst 4 tegn";
+                if (value.Length < 4)
+                {
+                    Console.WriteLine(errMsg);
+                }
+                else
+                {
+                    _type = value;
+                }
+            }
+        }
         public DayOfWeek UgeDag { get { return _ugeDag; } private set { _ugeDag = value; } }
         public DateTime StartTidspunkt { get { return _startTidspunkt; } private set { _startTidspunkt = value; } }
         public DateTime SlutTidspunkt { get { return _slutTidspunkt; } private set { _slutTidspunkt = value; } }
@@ -29,6 +44,11 @@ namespace Badetidssystemet
 
         public BadetidsPeriode(string type, DayOfWeek ugeDag, DateTime startTidspunkt, DateTime slutTidspunkt)
         {
+            if (startTidspunkt > slutTidspunkt)
+            {
+                string errMsg = "Starttidspunkt skal være før sluttidspunkt";
+                Console.WriteLine(errMsg);
+            }
             Type = type;
             UgeDag = DayOfWeek.Sunday;
             StartTidspunkt = startTidspunkt;
@@ -49,6 +69,16 @@ namespace Badetidssystemet
             }
 
             return result;
+        }
+
+        public void AdderKreds(Kreds kreds)
+        {
+            _kredse.Add(kreds.ID, kreds);
+        }
+
+        private void SletKreds(string id)
+        {
+            _kredse.Remove(id);
         }
     }
 }
