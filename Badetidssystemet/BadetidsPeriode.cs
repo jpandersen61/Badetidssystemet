@@ -17,9 +17,14 @@ namespace Badetidssystemet
             private set
             {
                 string errMsg = "Type skal indeholde mindst 4 tegn";
+
                 if (value.Length < 4)
                 {
-                    Console.WriteLine(errMsg);
+                    //Opgave 7:
+                    //Console.WriteLine(errMsg);
+
+                    //Opgave 8:
+                    throw new ArgumentException(errMsg);
                 }
                 else
                 {
@@ -47,7 +52,12 @@ namespace Badetidssystemet
             if (startTidspunkt > slutTidspunkt)
             {
                 string errMsg = "Starttidspunkt skal være før sluttidspunkt";
-                Console.WriteLine(errMsg);
+
+                //Opgave 7:
+                //Console.WriteLine(errMsg);
+
+                //Opgave 8:
+                throw new ArgumentException(errMsg);
             }
             Type = type;
             UgeDag = DayOfWeek.Sunday;

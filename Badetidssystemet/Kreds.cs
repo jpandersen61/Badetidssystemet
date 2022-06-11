@@ -19,7 +19,12 @@ namespace Badetidssystemet
                 if (value.Length < 1)
                 {
                     string errMsg = "ID må ikke være kortere end 1";
-                    Console.WriteLine(errMsg);
+
+                    //Opgave 7 princip:
+                    //Console.WriteLine(errMsg);
+
+                    //Opgave 8 princip:
+                    throw new ArgumentException(errMsg);
                 }
                 else
                 {
@@ -37,8 +42,12 @@ namespace Badetidssystemet
                    if (value < 0)
                    {
                        string errMsg = "Antal deltagere skal være større en 0";
-                        
-                       Console.WriteLine(errMsg);
+                       
+                       //Opgave 7:
+                       //Console.WriteLine(errMsg);
+
+                       //Opgave 8:
+                       throw new ArgumentException(errMsg);
                    }
                    else
                    {
