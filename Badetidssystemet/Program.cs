@@ -12,6 +12,11 @@ namespace Badetidssystemet
             Console.WriteLine(k1);
             Console.WriteLine(k2);
 
+            Console.WriteLine("Opgave 2");
+            BadetidsPeriode b1 = new BadetidsPeriode("Morgendukkert", DayOfWeek.Friday, new DateTime().AddHours(6), new DateTime().AddHours(8));
+            BadetidsPeriode b2 = new BadetidsPeriode("Aftensvaler", DayOfWeek.Monday, new DateTime().AddHours(19), new DateTime().AddHours(21));
+            Console.WriteLine(b1);
+            Console.WriteLine(b2);
         }
     }
 }
