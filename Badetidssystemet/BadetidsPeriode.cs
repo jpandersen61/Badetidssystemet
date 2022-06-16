@@ -20,10 +20,10 @@ namespace Badetidssystemet
 
                 if (value.Length < 4)
                 {
-                    //Opgave 7:
+                    //Opgave 6:
                     //Console.WriteLine(errMsg);
 
-                    //Opgave 8:
+                    //Opgave 7:
                     throw new ArgumentException(errMsg);
                 }
                 else
@@ -47,16 +47,18 @@ namespace Badetidssystemet
             _kredse = new Dictionary<string, Kreds>();
         }
 
+        
         public BadetidsPeriode(string type, DayOfWeek ugeDag, DateTime startTidspunkt, DateTime slutTidspunkt)
         {
+
             if (startTidspunkt > slutTidspunkt)
             {
                 string errMsg = "Starttidspunkt skal være før sluttidspunkt";
 
-                //Opgave 7:
+                //Opgave 6:
                 //Console.WriteLine(errMsg);
 
-                //Opgave 8:
+                //Opgave 7:
                 throw new ArgumentException(errMsg);
             }
             Type = type;
@@ -81,12 +83,16 @@ namespace Badetidssystemet
             return result;
         }
 
-        public void AdderKreds(Kreds kreds)
+        //Indført i opgave 4
+        //Gjort virtual mhp. nedarvning i opgave 10
+        public virtual void AdderKreds(Kreds kreds)
         {
             _kredse.Add(kreds.ID, kreds);
         }
 
-        private void SletKreds(string id)
+        //Indført i opgave 4
+        //Gjort virtual mhp. nedarvning i opgave 10
+        public virtual void SletKreds(string id)
         {
             _kredse.Remove(id);
         }
