@@ -41,7 +41,7 @@ namespace Badetidssystemet
                {
                    if (value < 0)
                    {
-                       string errMsg = "Antal deltagere skal være større en 0";
+                       string errMsg = "Antal deltagere skal være mindst 0";
                        
                        //Opgave 7:
                        //Console.WriteLine(errMsg);
